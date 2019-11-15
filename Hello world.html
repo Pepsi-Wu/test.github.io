@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Hello, world!</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0e5f9b82-1ccc-4d12-9699-171babf3a697" class="page serif"><header><h1 class="page-title">Hello, world!</h1></header><div class="page-body"><div id="885dce40-fa9e-42e0-9eb3-48ee6d45fe21" class="column-list"><div id="cf3ab6b4-256b-4515-8a9c-dfb77ca9434e" style="width:18.75%" class="column"><p id="eeca62a9-a150-4419-ad56-bc6e781031c5" class="">
+</p><figure id="dd171ed9-0286-4fd7-a74a-bba5ea69cb61" class="link-to-page"><a href="Hello world/R sum.html"><span class="icon">👨‍🎓</span>Résumé</a></figure><figure id="69872336-6a0d-4758-a6e2-ba61e5a7a616" class="link-to-page"><a href="Hello world/Transcript.html"><span class="icon">🥇</span>Transcript</a></figure></div><div id="9b9938f9-2000-458f-9f9e-9671124f80f1" style="width:81.25000000000003%" class="column"><figure id="12c9ef99-84a0-4541-9a5a-345a212ede66" class="image"><a href="Hello world.png"><img style="width:624px" src="Hello world.png"/></a></figure></div></div><p id="cc7382f1-5466-4e04-8783-26f483eb707f" class="block-color-orange_background">Notion is my new zone, where I will share my sudden inspirations, academic researching and long-term plans. 😈—ShawnWu</p><h2 id="7ad6a08c-d8a9-4d27-9148-f5729a8a848b" class="">Academic</h2><figure id="c0cc6bc1-ddd9-41f7-8403-03b6d2e87607" class="link-to-page"><a href="Hello world/PMSM.html"><span class="icon">🚙</span>PMSM</a></figure><figure id="58593251-e86b-490c-bbd5-f19c141da5fd" class="link-to-page"><a href="Hello world/SPWM in DSP28335.html"><span class="icon">🏔</span>SPWM in DSP28335</a></figure><figure id="f8af8f45-fb8a-4b89-b935-301040ec0c22" class="link-to-page"><a href="Hello world/LEM current sensor.html"><span class="icon">🔗</span>LEM current sensor</a></figure><figure id="c75f8ab6-4d45-434f-9ff1-c574f887f244" class="link-to-page"><a href="Hello world/DSP 28335 ePWM Compare.html"><span class="icon">💻</span>【DSP】28335 ePWM Compare</a></figure><figure id="14e0b3eb-370b-407b-b599-f2a7b56eabe6" class="link-to-page"><a href="Hello world/How can I use Litz wire.html"><span class="icon">👨‍🚒</span>How can I use Litz wire?</a></figure><figure id="e78a7a98-e626-45f8-b7fb-53de39d3e2b6" class="link-to-page"><a href="Hello world/AC DC converter.html"><span class="icon">🔌</span>AC-DC converter</a></figure><figure id="bff6fddf-55ce-4529-ae7f-1c540a54405f" class="link-to-page"><a href="Hello world/Power Decoupling.html"><span class="icon">🎧</span>Power Decoupling</a></figure><figure id="568f862b-3135-421f-9ed8-38ccfef9dce0" class="link-to-page"><a href="Hello world/TL072 to OPA2197.html"><span class="icon">🎪</span>TL072 to OPA2197</a></figure><figure id="4d738dad-1107-49b0-abf1-cce1b9b1cbf5" class="link-to-page"><a href="Hello world/Reason for HCPL 0201 Vout.html"><span class="icon">🕳</span>Reason for HCPL-0201 Vout </a></figure><figure id="cdd1fc3b-7bac-42fb-b4bf-d113c26830e3" class="link-to-page"><a href="Hello world/C code.html"><span class="icon">🕴</span>【C code】移位操作</a></figure><figure id="3bf129dd-1571-4523-b372-981ca745abc7" class="link-to-page"><a href="Hello world/DSP ADC.html"><span class="icon">🖥</span>【DSP】ADC</a></figure><figure id="d4fabd68-3980-4920-bd86-04e06d91024e" class="link-to-page"><a href="Hello world/DSP ADC Current Sample.html"><span class="icon">🕹</span>【DSP】ADC Current Sample</a></figure><figure id="bc23550c-3a21-4928-95e3-d8b8b0295af5" class="link-to-page"><a href="Hello world/PCB Layout Cautions.html"><span class="icon">🏉</span>【PCB】Layout Cautions</a></figure><figure id="4273390a-0f8c-4053-930b-6734a2229f28" class="link-to-page"><a href="Hello world/HVPM.html"><span class="icon">🏍</span>【HVPM】数学库</a></figure><figure id="75c6caf7-4284-4121-9615-65c5bf42c2a7" class="link-to-page"><a href="Hello world/SPI in DSP.html"><span class="icon">☠</span>【SPI in DSP】</a></figure><figure id="cd4e8b51-fd79-440e-9c13-62d87c30bcaf" class="link-to-page"><a href="Hello world/PMSM Current Regulator.html"><span class="icon">🎽</span>PMSM Current Regulator</a></figure><figure id="c12fe9d1-018d-483c-80ed-120331891eeb" class="link-to-page"><a href="Hello world/DC Source Magna_Power.html"><span class="icon">🌅</span>【DC Source】Magna_Power</a></figure><figure id="786dda4d-b26b-4ce2-a191-c17f5e60652a" class="link-to-page"><a href="Hello world/Untitled.html"><span class="icon">⏱</span>【油雾器】使用与用油选择</a></figure><figure id="4e4d0ba7-d1eb-46b7-be45-c5276dc6360a" class="link-to-page"><a href="Hello world/MMC CHB.html"><span class="icon">🏂</span>MMC&amp;CHB</a></figure><figure id="b81efd7d-2212-465c-b3b1-003da30fc756" class="link-to-page"><a href="Hello world/Triangle Current mode.html">Triangle Current mode</a></figure><figure id="bcbbcfe9-06a0-47b0-b699-16280638ed94" class="link-to-page"><a href="Hello world/Designing Control Loops for Linear and Switching P.html">Designing Control Loops for Linear and Switching Power Supplies</a></figure><figure id="8e1409fa-2633-4e65-8e39-3904da2ed407" class="link-to-page"><a href="Hello world/Python.html">Python</a></figure><h2 id="a8fdf169-4dec-4c75-851b-26104a773518" class="">Life</h2><figure id="2457f4f3-78e8-4fec-b413-48d6b5c1debb" class="link-to-page"><a href="Hello world/Want to be healthier.html"><span class="icon">🏃</span>Want to be healthier</a></figure><h2 id="487dcb35-7ea0-4a08-b3a5-7c58795c8d66" class="">For fun</h2><figure id="3ba02daf-19f0-49ab-aec3-da1d0f3742e6" class="link-to-page"><a href="Hello world/Name Code.html"><span class="icon">😶</span>Name Code</a></figure><figure id="edaa461d-decf-42f5-8a71-aa7526ad121e" class="link-to-page"><a href="Hello world/Untitled 1.html"><span class="icon">🎗</span>共产党宣言节选</a></figure><figure id="cb92f228-0e8f-4137-b024-c4dc01b57baf" class="link-to-page"><a href="Hello world/Untitled 2.html"><span class="icon">🐸</span>苟利国家生死以，岂因祸福避趋之。</a></figure><h2 id="95049b3a-71d1-407a-bd6f-fa883c723a96" class="">English Learning</h2><figure id="5f447b20-d359-4050-b017-e482c6c6db19" class="link-to-page"><a href="Hello world/English grammar If.html"><span class="icon">📜</span>【English grammar】If</a></figure><figure id="7b741fee-e58d-4a14-83ac-375439074eee" class="link-to-page"><a href="Hello world/Engish.html"><span class="icon">🙃</span>【Engish】美国人的网络常识堪忧</a></figure><figure id="77e69d17-951e-46e7-bbdb-79bbac02e549" class="link-to-page"><a href="Hello world/Cross Culture.html">Cross-Culture</a></figure></div></article></body></html>
